@@ -40,3 +40,17 @@ $(window).resize(function() {
     }
 	}, 200);
 });	
+
+/*==================================================================
+ Sound Function
+==================================================================*/
+$(function(){
+  $('#element').on('click', function(){
+    var v = $('#video').get(0);
+    v.muted = !v.muted;
+    var state = v.muted ? 'off' : 'on';
+    var path = $('#element').attr('src').split('/');
+    path[path.length-1] = 'sound_' + state + '.png';
+    $('#element').attr('src', path.join('/'));
+  });
+});
